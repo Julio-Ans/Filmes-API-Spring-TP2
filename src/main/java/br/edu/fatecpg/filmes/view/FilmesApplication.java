@@ -1,6 +1,6 @@
 package br.edu.fatecpg.filmes.view;
 
-import br.edu.fatecpg.filmes.model.Filme;
+import br.edu.fatecpg.filmes.model.Resultado;
 import br.edu.fatecpg.filmes.service.ConsomeApi;
 import br.edu.fatecpg.filmes.service.ConverteDado;
 import org.springframework.boot.CommandLineRunner;
@@ -40,8 +40,9 @@ public class FilmesApplication implements CommandLineRunner {
 					if (filme!=null) {
 						ConverteDado conversor = new ConverteDado();
 						String json = ConsomeApi.obterDados(filme);
-						Filme jsonTratado = conversor.obterDado(json, Filme.class);
+						Resultado jsonTratado = conversor.obterDado(json, Resultado.class);
 						System.out.println(jsonTratado);
+
 					};
 					break;
 
